@@ -165,6 +165,10 @@ class ChatBot extends React.Component {
                         }else if(response.result.action === "alberoGenealogico")
                         {
                             messaggio = <p>Potresti iniziare chiedendogli di suo/a marito/moglie per poi parlare dei figli e a loro volta se si sono sposati e se hanno avuto figli. <br/> Per ogni persona si può chiedere se ha qualche aneddoto o cosa gli/le piace/piaceva fare insieme.</p>
+                        }else if(response.result.action === "santoDelGiorno")
+                        {
+                            let santo = "S. Domenico";
+                            messaggio= <p>Il santo del giorno e' {santo}</p>
                         }
 
                         if(item.speech)// se non vuoto mostro il testo di quel messaggio aggiungendolo a messageList
