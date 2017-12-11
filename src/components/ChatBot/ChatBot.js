@@ -169,13 +169,12 @@ class ChatBot extends React.Component {
                             messaggio = <p>Potresti iniziare chiedendogli di suo/a marito/moglie per poi parlare dei figli e a loro volta se si sono sposati e se hanno avuto figli. <br/> Per ogni persona si può chiedere se ha qualche aneddoto o cosa gli/le piace/piaceva fare insieme.</p>
                         }else if(response.result.action === "santoDelGiorno")
                         {
-                            let data = new Date();
-                            let datastring = data.getDate() + "/" + data.getMonth() + 1 + "/" + data.getFullYear();
                             // --------------------------------------------------------------------------------------
-
-                            this.showSaint(data.getDay(),data.getMonth());
-                            console.log("giorno " + data.getDay() + " mese" + data.getMonth())
-                            messaggio= <p>Il santo del giorno e': </p>
+                            let data = new Date();
+                            let month=data.getMonth()+1;
+                            let day=data.getDate();
+                            this.showSaint(day,month);
+                            //console.log("giorno " + day + " mese" + month);
                         }
 
                     if(item.speech)// se non vuoto mostro il testo di quel messaggio aggiungendolo a messageList
@@ -201,7 +200,7 @@ class ChatBot extends React.Component {
 
         session.getSaintContent(day, month, (results)=> {
             results.forEach((element) => {
-                this.messageList.addComponent(<a className='list-group-item Msj_server'><b><p>{element.santo}</p></b></a>);
+                this.messageList.addComponent(<a className='list-group-item Msj_server'><b><p>Il santo del giorno e': {element.santo}</p></b></a>);
             })
         });
 
