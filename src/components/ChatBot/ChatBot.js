@@ -167,11 +167,14 @@ class ChatBot extends React.Component {
                             messaggio = <p>Potresti iniziare chiedendogli di suo/a marito/moglie per poi parlare dei figli e a loro volta se si sono sposati e se hanno avuto figli. <br/> Per ogni persona si può chiedere se ha qualche aneddoto o cosa gli/le piace/piaceva fare insieme.</p>
                         }else if(response.result.action === "santoDelGiorno")
                         {
+                            /*let data = new Date();
+                            let datastring = data.getDate() + "/" + data.getMonth() + 1 + "/" + data.getFullYear();*/
+
                             let santo = "S. Domenico";
                             messaggio= <p>Il santo del giorno e' {santo}</p>
                         }
 
-                        if(item.speech)// se non vuoto mostro il testo di quel messaggio aggiungendolo a messageList
+                    if(item.speech)// se non vuoto mostro il testo di quel messaggio aggiungendolo a messageList
                             this.messageList.addComponent(<a className='list-group-item Msj_server'><b>{messaggio}</b></a>);
                     })
                 }
@@ -206,6 +209,19 @@ class ChatBot extends React.Component {
 
         return htmlCode;
     }
+
+    /*santoDelGiorno(){
+        let html=<div id="BoxSantoDelGiorno" style="border:1px solid black; margin-top:10px; overflow:auto; width:300px">
+        <script type="text/javascript">
+        var data = new Date();
+        var datastring = data.getDate() + "/" + data.getMonth() + 1 + "/" + data.getFullYear();
+        var node = document.createElement('script');
+        node.type = 'text/javascript';
+        node.async = true;
+        node.src = 'http://www.santodelgiorno.it/_scriptjs/santodelgiorno.php?v=' + datastring;
+        // Now insert the node into the DOM, perhaps using insertBefore()
+        document.getElementById("BoxSantoDelGiorno").appendChild(node); <script/>
+    }*/
 }
 
 export default ChatBot;
