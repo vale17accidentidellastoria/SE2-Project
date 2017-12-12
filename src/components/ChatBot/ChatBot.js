@@ -121,6 +121,8 @@ class ChatBot extends React.Component {
                     </div>
                 </div>;
             this.multimediaContents.addComponent(video);
+            input.disabled = false;
+            input.value = '';
             return;
         }
 
