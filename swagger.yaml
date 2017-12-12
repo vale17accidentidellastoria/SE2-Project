@@ -1,0 +1,111 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: "Kioku"
+  description: Specifica delle api offerte
+  contact:
+    name: Mallocs API Team
+    email: kioku.chatbot@gmail.com
+host: kiokuchatbot.herokuapp.com
+basePath: /api
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /db:
+    get:
+      description: |
+          Esegue azioni nel database.
+          
+          Il parametro action può assumere tre valori.
+          
+          - get : ricerca dati nel db
+          
+          - add : inserisce dati
+          
+          - remove : rimuove dati
+          
+          Il parametro id_patient specifica di quale paziente stiamo ricercando i contenuti della sessione.
+          
+      operationId: db_interaction
+      parameters:
+      
+        - name: action
+          in: query
+          description: specifica l'azione da eseguire
+          required: true
+          type: string
+          collectionFormat: csv
+          x-example: 'get'
+          
+          items:
+            type: string
+            
+        - name: id_patient
+          in: query
+          description: id dell'operatore da ricercare
+          required: true
+          type: string
+          collectionFormat: csv
+          items:
+            type: string
+          x-example: 'p0'
+          
+      responses:
+        200:
+          description: db response
+          schema:
+            type: string
+  /youtube:
+    get:
+      description: |
+          Passando attraverso il parametro search una stringa di testo, restituirà un json contenente i dati dei primi quattro video risultanti dalla ricerca nel sito youtube.com.
+      operationId: youtube_search
+      parameters:
+      
+        - name: search
+          in: query
+          description: stringa di testo da ricercare
+          required: true
+          type: string
+          collectionFormat: csv
+          x-example: 'cani'
+          items:
+            type: string
+          
+      responses:
+        200:
+          description: db response
+          schema:
+            type: string
+        default:
+          description: chiamata API fallita
+          
+  /saint:
+      get:
+        description: |
+            Passando attraverso i parametri day e month rispettivamente giorno e mese desiderato, si otterrà in risposta un json contenente  giorno,mese e santo relativi.
+        operationId: youtube_search
+        parameters:
+          - name: day
+            in: query
+            description: giorno
+            required: true
+            type: integer
+            format: int32
+            x-example: 10
+            
+          - name: month
+            in: query
+            description: mese
+            required: true
+            type: integer
+            format: int32
+            x-example: 12
+            
+        responses:
+          200:
+            description: pet response
