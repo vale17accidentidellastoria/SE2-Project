@@ -2,7 +2,7 @@ class YoutubeAPI {
 
     constructor() {
         let youtube = require('youtube-finder');
-        this.client = youtube.createClient({ key: 'AIzaSyANRHhDzlgjfF94-WVlP-5v1tvd3V9hGNk'})
+        this.client = youtube.createClient({ key: 'AIzaSyB96bQA4UdZD94cWRhGE4y-K-dfWYCmrjE'})
     }
 
     find(searchQuery, callback) {
