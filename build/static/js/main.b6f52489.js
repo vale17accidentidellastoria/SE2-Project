@@ -16346,7 +16346,7 @@ __WEBPACK_IMPORTED_MODULE_2__SessionManager__["a" /* default */].login(profile);
 //console.log('Name: ' + profile.getName());
 //console.log('Email: ' + profile.getEmail());
 //console.log({accessToken: id_token});
-}},{key:'render',value:function render(){var _this2=this;if(!this.state.logged){return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_google_login__["GoogleLogin"],{clientId:'521032149458-2uuccstqvqe6iepohkl0kdoh8jpd32q1.apps.googleusercontent.com',onSuccess:this.onLoginSuccess,onFailure:function onFailure(response){return console.error(response);},onRequest:function onRequest(){return console.log('loading');},offline:false,approvalPrompt:'force',responseType:'id_token',isSignedIn:true,className:'btn btn-danger',style:{padding:'3px'}// disabled
+}},{key:'render',value:function render(){var _this2=this;if(!this.state.logged){return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_google_login__["GoogleLogin"],{clientId:'1046919733343-d41b88ij61fajvnkmpk0se3issi73nph.apps.googleusercontent.com',onSuccess:this.onLoginSuccess,onFailure:function onFailure(response){return console.error(response);},onRequest:function onRequest(){return console.log('loading');},offline:false,approvalPrompt:'force',responseType:'id_token',isSignedIn:true,className:'btn btn-danger',style:{padding:'3px'}// disabled
 // prompt="consent"
 },__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img',{src:__WEBPACK_IMPORTED_MODULE_3__google_icon2_32x32_png___default.a,alt:'google_icon',width:'32px',height:'32px',style:{marginRight:'2px'}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('b',null,'Login con Google'));}else{//document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost/application-name/logoutUser";
 //return <button className="btn btn-danger glyphicon glyphicon-log-out" style={{height:'40px'}} onClick={()=>{document.location.href = "https://www.google.com/accounts/Logout"; this.onLogoutSuccess(); }}/>;
@@ -16374,4 +16374,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABz
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.8361020a.js.map
+//# sourceMappingURL=main.b6f52489.js.map
