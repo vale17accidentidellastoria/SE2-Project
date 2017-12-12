@@ -111,7 +111,7 @@ class ChatBot extends React.Component {
         if(this.messageList)
             this.messageList.addComponent(<a className='list-group-item Msj_client'><b><small><font color={"#d18424"}>Utente</font></small></b><hr className={"dividerUtente"}/>{input.value}</a>);
 
-        // Easter egg
+        /*// Easter egg
         if(input.value==='faaantastico') {
             let video = <div className="row thumbnail flex-row Second-media-color center-block" style={{maxWidth:'823px', marginBottom:'5px'}}>
                     <div className="col-lg-12 center-block">
@@ -124,7 +124,7 @@ class ChatBot extends React.Component {
             input.disabled = false;
             input.value = '';
             return;
-        }
+        }*/
 
         this.client
             // Mando il messaggio dell'utente al server di Dialogflow
@@ -134,7 +134,17 @@ class ChatBot extends React.Component {
 
                 // ... riporto nella console del browser il JSON di risposta
                 console.log(response);/* do something */
-
+                if(input.value==='faaantastico') { //Easter egg
+                    let video = <div className="row thumbnail flex-row Second-media-color center-block" style={{maxWidth:'823px', marginBottom:'5px'}}>
+                        <div className="col-lg-12 center-block">
+                            <div className="Youtube-dim">
+                                <YoutubePlayer videoId='nMZJKGyu-Kk' />
+                            </div>
+                        </div>
+                    </div>;
+                    this.multimediaContents.addComponent(video);
+                    return;
+                }
                 // 'this.multimediaContents' è l'istanza ad un componente 'ComponentList' che memorizza la lista
                 // dei contenuti multimediali da mostrare sullo schermo (lato sinistro)
                 if(this.multimediaContents) {
