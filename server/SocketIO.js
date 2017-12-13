@@ -9,6 +9,10 @@ const port = 3002;
 class SocketIO {
 
     static start() {
+        io.configure(function () {
+            io.set("transports", ["xhr-polling"]);
+            io.set("polling duration", 10);
+        });
         io.on('connection', SocketIO.onConnection);
         io.listen(port);
         console.log("socket.io listening on port: " + port);
