@@ -33,7 +33,7 @@ class MultimediaContents extends React.Component {
         };
 
         if(session.patientID) {
-            this.socket = openSocket('https://kiokuchatbot.herokuapp.com'); // sostituire altrimenti openSocket(':3002/')
+            this.socket = openSocket('https://kiokuchatbot.herokuapp.com:3002'); // sostituire altrimenti openSocket(':3002/')
             this.socket.emit('subscribeToPatient', session.patientID);
 
             this.socket.on('add', (element) => {
